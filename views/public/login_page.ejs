@@ -48,10 +48,15 @@
       <!-- Form -->
       <div class="col-lg-5 col-md-8">
         <div class="login-card">
-          <form>
+          <form action="dang-nhap" method="post">
             <div class="text-center mb-4">
               <h4 class="fw-bold">Đăng Nhập</h4>
             </div>
+            
+            <!-- Hiện thông báo lỗi -->
+            <% if (error) { %>
+              <div class="alert alert-danger py-2"><%= error %></div>
+            <% } %>
 
             <!-- Email -->
             <div class="mb-4">
@@ -66,8 +71,8 @@
 
             <!-- Submit button -->
             <div class="text-center">
-              <button type="button" class="btn btn-primary btn-lg w-100">
-                Login
+              <button type="submit" class="btn btn-primary btn-lg w-100">
+                Đăng nhập
               </button>
             </div>
 

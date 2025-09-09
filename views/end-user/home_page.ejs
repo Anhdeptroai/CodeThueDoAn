@@ -40,6 +40,42 @@
 </head>
 <body>
 
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg shadow-sm bg-primary">
+  <!-- Container wrapper -->
+  <div class="container-fluid">
+    <!-- Toggle button -->
+    <button class="navbar-toggler" type="button" data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Collapsible wrapper -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <!-- Navbar brand -->
+      <a class="navbar-brand mt-2 mt-lg-0" href="#">
+        <div class="text-white">DTA Team</div>
+      </a>
+      <!-- Left links -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link text-white" href="trang-chu">Trang chủ</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="lich-trinh">Tiến độ hoàn thành</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="">Hướng dẫn</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="dang-nhap">Đăng nhập</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- Container wrapper -->
+</nav>
+<!-- Navbar -->
+
 <!-- Hero -->
 <section class="hero-section d-flex flex-column justify-content-center align-items-center">
   <h1 class="display-4 fw-bold">Dịch vụ Code Thuê Đồ Án</h1>
@@ -52,48 +88,15 @@
   <div class="container">
     <h2 class="text-center fw-bold mb-5">Dịch vụ của chúng tôi</h2>
     <div class="row g-4">
+      <% articles.forEach(article => { %>
       <div class="col-md-4">
         <div class="card service-card h-100 text-center p-3">
-          <i class="fas fa-code fa-3x text-primary mb-3"></i>
-          <h5 class="card-title">Code C++</h5>
-          <p class="card-text">Hỗ trợ làm bài tập, đồ án bằng ngôn ngữ C++ tối ưu và dễ hiểu.</p>
+          <h5 class="card-title"><%= article.title_article %></h5>
+          <p class="card-text"><%= article.description_article %></p>
+          <a href="/trang-chu/<%= article.id %>" class="btn btn-primary">Xem chi tiết</a>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="card service-card h-100 text-center p-3">
-          <i class="fab fa-java fa-3x text-danger mb-3"></i>
-          <h5 class="card-title">Code Java</h5>
-          <p class="card-text">Phát triển ứng dụng Java từ console đến Spring Boot, JSP, Servlet.</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card service-card h-100 text-center p-3">
-          <i class="fas fa-globe fa-3x text-success mb-3"></i>
-          <h5 class="card-title">Web Development</h5>
-          <p class="card-text">Thiết kế website với Bootstrap, MDB, React, Spring Boot.</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card service-card h-100 text-center p-3">
-          <i class="fas fa-cloud-upload-alt fa-3x text-info mb-3"></i>
-          <h5 class="card-title">Deploy & Hosting</h5>
-          <p class="card-text">Triển khai dự án lên hosting, VPS, gắn tên miền chuyên nghiệp.</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card service-card h-100 text-center p-3">
-          <i class="fas fa-brain fa-3x text-warning mb-3"></i>
-          <h5 class="card-title">AI & Machine Learning</h5>
-          <p class="card-text">Tích hợp AI cơ bản cho các bài toán phân tích dữ liệu, dự đoán.</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card service-card h-100 text-center p-3">
-          <i class="fas fa-headset fa-3x text-dark mb-3"></i>
-          <h5 class="card-title">Hỗ trợ 24/7</h5>
-          <p class="card-text">Luôn đồng hành, hỗ trợ khách hàng nhanh chóng, nhiệt tình.</p>
-        </div>
-      </div>
+      <% }) %>
     </div>
   </div>
 </section>
@@ -136,7 +139,7 @@
 
 <!-- Footer -->
 <footer class="bg-primary text-white text-center py-3">
-  <p class="mb-0">© 2025 Dịch vụ Code Thuê Đồ Án | All rights reserved.</p>
+  <p class="mb-0">© 2025 Dịch vụ Code Thuê Đồ Án DTA Team</p>
 </footer>
 
 <!-- MDB JS -->
