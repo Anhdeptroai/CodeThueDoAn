@@ -12,6 +12,10 @@ const dashboardController = {
         res.render('admin/manage_page/dashboard_account', { users });
     },
 
+    getDashboard_Progress: async(req, res) => {
+        res.render('admin/manage_page/dashboard_progress');
+    },
+
     getDashboard_updateArticle: async(req, res) => {
         const { id } = req.params;
         const articleData = await article.getArticleById(id);
