@@ -12,6 +12,12 @@ const pool = new Pool({
     // database: "codingservicedb",
     // password: "phungsu123",
     // port: 5432
+
+    // user: "postgres",
+    // host: "localhost",
+    // database: "codingservicedb",
+    // password: "Trunganh123",
+    // port: 5432
 });
 
 module.exports = pool;
