@@ -5,6 +5,7 @@ const homeRoutes = require("./routes/home_routes");
 const dashboardRoutes = require("./routes/dashboard_routes");
 const progressRoutes = require("./routes/progress_routes");
 const session = require('express-session'); 
+const reviewRoutes = require("./routes/review_routes");
 
 const app = express();
 
@@ -24,6 +25,7 @@ app.use("/", authRoutes);
 app.use("/", homeRoutes);
 app.use("/", dashboardRoutes);
 app.use("/", progressRoutes);
+app.use("/", reviewRoutes);
 
 (async () => {
   const PORT = process.env.PORT || 3000;
