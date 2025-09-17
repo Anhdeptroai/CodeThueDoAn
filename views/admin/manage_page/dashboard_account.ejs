@@ -13,19 +13,8 @@
 </head>
 <body class="bg-light">
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg shadow-sm bg-primary">
-  <div class="container-fluid">
-    <a class="navbar-brand text-white fw-bold" href="#">DTA Dashboard</a>
-    <ul class="navbar-nav me-auto">
-      <li class="nav-item"><a class="nav-link text-white" href="/dashboard-trang-chu">Quản lý nội dung</a></li>
-      <li class="nav-item"><a class="nav-link text-white" href="/dashboard-tai-khoan">Quản lý tài khoản</a></li>
-      <li class="nav-item"><a class="nav-link text-white" href="/dashboard-tien-trinh">Quản lý tiến trình</a></li>
-      <li class="nav-item"><a class="nav-link text-white" href="/">Cài đặt</a></li>
-    </ul>
-  </div>
-</nav>
-<!-- Navbar -->
+<!-- Header -->
+  <%- include('partials_dashboard/header_dashboard') %>
 
 <div class="container py-5">
   <!-- Danh sách tài khoản -->
@@ -50,11 +39,11 @@
         <td><%= user.decentralization === 0 ? 'Quản trị viên' : 'Người dùng' %></td>
         <td>
           <!-- Nút sửa -->
-          <a href="" class="btn btn-sm btn-warning" data-mdb-toggle="modal" data-mdb-target="#editModal">
+          <a href="/dashboard-tai-khoan/<%= user.id %>/cap-nhat" class="btn btn-sm btn-warning" data-mdb-toggle="modal" data-mdb-target="#editModal">
             <i class="fas fa-edit"></i> Sửa
           </a>
           <!-- Nút xóa -->
-          <form action="" method="POST" style="display:inline;">
+          <form action="/dashboard-tai-khoan/<%= user.id %>/xoa" method="POST" style="display:inline;">
             <input type="hidden" name="id" value="1">
             <button type="submit" class="btn btn-sm btn-danger">
               <i class="fas fa-trash"></i> Xóa
@@ -93,9 +82,7 @@
 </div>
 
 <!-- Footer -->
-<footer class="bg-primary text-white text-center py-3 mt-5">
-  <p class="mb-0">© 2025 Dịch vụ Code Thuê Đồ Án DTA Team</p>
-</footer>
+  <%- include('partials_dashboard/footer_dashboard') %>
 
 <!-- MDB JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/9.2.0/mdb.min.js"></script>

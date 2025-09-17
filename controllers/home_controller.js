@@ -2,7 +2,7 @@ const article = require('../models/home_model');
 
 const homeController = {
     getHome: async(req, res) => {
-        const articles = await article.getlistArticle(); 
+        const articles = await article.getlistArticle();
         res.render('end-user/home_page', { articles });
     },
 

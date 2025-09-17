@@ -61,45 +61,34 @@
     </div>
   </div>
 
-  <!-- Các bước -->
-  <div class="step done">
-    <div class="icon"><i class="fas fa-check"></i></div>
-    <div>
-      <h6 class="fw-bold mb-0">Phân tích yêu cầu</h6>
-      <small class="text-success">Hoàn thành</small>
-    </div>
-  </div>
-
-  <div class="step done">
-    <div class="icon"><i class="fas fa-check"></i></div>
-    <div>
-      <h6 class="fw-bold mb-0">Thiết kế CSDL</h6>
-      <small class="text-success">Hoàn thành</small>
-    </div>
-  </div>
-
-  <div class="step doing">
-    <div class="icon"><i class="fas fa-spinner fa-spin"></i></div>
-    <div>
-      <h6 class="fw-bold mb-0">Code Backend (Spring Boot)</h6>
-      <small class="text-primary">Đang thực hiện (60%)</small>
-    </div>
-  </div>
-
-  <div class="step todo">
-    <div class="icon"><i class="fas fa-clock"></i></div>
-    <div>
-      <h6 class="fw-bold mb-0">Code Frontend (React + Bootstrap)</h6>
-      <small class="text-muted">Chưa bắt đầu</small>
-    </div>
-  </div>
-
-  <div class="step todo">
-    <div class="icon"><i class="fas fa-clock"></i></div>
-    <div>
-      <h6 class="fw-bold mb-0">Triển khai & kiểm thử</h6>
-      <small class="text-muted">Chưa bắt đầu</small>
-    </div>
+  <div>
+    <% if (progresslist && progresslist.length > 0) { %>
+      <% progresslist.forEach(progress => { %>
+        <% if (user.id === progress.user_id || user.role === 1) { %>
+          <div class="step done">
+            <div class="icon"><i class="<%= progress.status == 0 
+                                            ? 'fas fa-clock' 
+                                            : (progress.status == 1 
+                                                ? 'fas fa-spinner fa-spin' 
+                                                : 'fas fa-check') %>"></i></div>
+            <div>
+              <h6 class="fw-bold mb-0"><%= progress.title_progress %></h6>
+              <% if (progress.status == 0) { %>
+                <small class="text-muted">Chưa bắt đầu</small>
+              <% } else if (progress.status == 1) { %>
+                <small class="text-primary">Đang thực hiện (<%= progress.percent %>%)</small>
+              <% } else { %>
+                <small class="text-success">Hoàn thành</small>  
+              <% } %>
+            </div>
+          </div>
+        <% } %>
+      <% } ) %>
+    <% } else { %>
+      <tr>
+          <td colspan="5">Không có dữ liệu</td>
+      </tr>
+    <% } %>
   </div>
 
 </div>

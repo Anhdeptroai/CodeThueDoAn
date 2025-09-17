@@ -4,9 +4,9 @@ const authRoutes = require("./routes/auth_routes");
 const homeRoutes = require("./routes/home_routes");
 const dashboardRoutes = require("./routes/dashboard_routes");
 const progressRoutes = require("./routes/progress_routes");
-const session = require('express-session'); 
+const session = require('express-session');
 const reviewRoutes = require("./routes/review_routes");
-
+const path = require("path");
 const app = express();
 
 // setup
@@ -20,6 +20,21 @@ app.use(session({
     saveUninitialized: false,
     cookie: { maxAge: 1000 * 60 * 60 } // 1 giờ
 }));
+
+app.post('/logout', (req, res) => {
+  req.session.destroy(err => {
+    if (err) console.error(err);
+    res.clearCookie('connect.sid'); // tên cookie mặc định là connect.sid
+    return res.redirect('/trang-chu');
+  });
+});
+
+app.use((req, res, next) => {
+  res.locals.user = req.session.user || null;
+  next();
+});
+
+app.use(express.static(path.join(__dirname, "image")));
 
 app.use("/", authRoutes);
 app.use("/", homeRoutes);
