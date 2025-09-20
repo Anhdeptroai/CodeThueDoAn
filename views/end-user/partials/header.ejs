@@ -20,108 +20,11 @@
             <a class="nav-link text-black fw-bold" href="trang-chu">Trang chủ</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link text-black fw-bold" href="lich-trinh">Tiến độ hoàn thành</a>
-            </li>
-            <li class="nav-item">
             <a class="nav-link text-black fw-bold" href="review">Hướng dẫn</a>
             </li>
-            <% if (user.decentralization === 0) { %>
-              <li class="nav-item">
-              <a class="nav-link text-black fw-bold" href="/dashboard-trang-chu">Dashboard</a>
-              </li>
-            <% } %>
-        </ul>
-
-        <div class="nav-item d-flex me-4">
-                <% if (user) { %>
-                    <div class="dropdown">
-                        <button class="dropdown-btn nav-link text-black bg-blue" onclick="toggleDropdown()"><%= user.email %> ▾</button>
-                            <div id="dropdownMenu" class="dropdown-content">
-                                <form method="post" action="/logout" style="display:inline">
-                                    <button class="border-0 bg-white text-black" type="submit">Đăng xuất</button>
-                                </form>
-                            </div>
-                    </div>
-                
-                <% } else { %>
-                    <a class="nav-link text-white login" href="/dang-nhap">Đăng nhập</a>
-                <% } %>
-            <!-- <a class="nav-link text-white" href="dang-nhap">Đăng nhập</a> -->
-            </>
-        </div>
     </div>
     <!-- Container wrapper -->
     </nav>
     <!-- Navbar -->
 </header>
 
-<script>
-    function toggleDropdown() {
-      document.getElementById("dropdownMenu").classList.toggle("show");
-    }
-
-    // Đóng dropdown khi click ra ngoài
-    window.onclick = function(event) {
-      if (!event.target.matches('.dropdown-btn')) {
-        let dropdowns = document.getElementsByClassName("dropdown-content");
-        for (let i = 0; i < dropdowns.length; i++) {
-          let openDropdown = dropdowns[i];
-          if (openDropdown.classList.contains('show')) {
-            openDropdown.classList.remove('show');
-          }
-        }
-      }
-    }
-  </script>
-
-  <style>
-  .dropdown {
-    position: relative;
-    display: inline-block;
-  }
-
-  .dropdown-btn {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-  }
-
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background: white;
-    min-width: 120px;
-    box-shadow: 0px 4px 8px rgba(0,0,0,0.4);
-    border-radius: 5px;
-    top: 35px;
-    left: auto;
-    right:10;
-    z-index: 1000;
-  }
-
-  .dropdown-content a {
-    display: block;
-    padding: 10px;
-    text-decoration: none;
-    color: black;
-  }
-
-  .dropdown-content a:hover {
-    background: #f1f1f1;
-  }
-
-  .dropdown-content.show {
-    display: block;
-  }
-
-  .login{
-    font-weight: bold;
-    border: 2px solid #0d6efd;
-    border-radius: 25px;
-    background: #0d6efd;
-    padding: 5px 10px;
-  }
-
-</style>

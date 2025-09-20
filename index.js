@@ -1,45 +1,16 @@
 const express = require('express');
-const bodyParser = require("body-parser");
-const authRoutes = require("./routes/auth_routes");
 const homeRoutes = require("./routes/home_routes");
-const dashboardRoutes = require("./routes/dashboard_routes");
-const progressRoutes = require("./routes/progress_routes");
 const session = require('express-session');
 const reviewRoutes = require("./routes/review_routes");
 const path = require("path");
 const app = express();
 
-// setup
+
 app.set("view engine", "ejs");
-app.use(bodyParser.urlencoded({ extended: false }));
-
-// Cấu hình session
-app.use(session({
-    secret: 'secret-key-dta', // khóa bí mật
-    resave: false,
-    saveUninitialized: false,
-    cookie: { maxAge: 1000 * 60 * 60 } // 1 giờ
-}));
-
-app.post('/logout', (req, res) => {
-  req.session.destroy(err => {
-    if (err) console.error(err);
-    res.clearCookie('connect.sid'); // tên cookie mặc định là connect.sid
-    return res.redirect('/trang-chu');
-  });
-});
-
-app.use((req, res, next) => {
-  res.locals.user = req.session.user || null;
-  next();
-});
-
 app.use(express.static(path.join(__dirname, "image")));
 
-app.use("/", authRoutes);
+
 app.use("/", homeRoutes);
-app.use("/", dashboardRoutes);
-app.use("/", progressRoutes);
 app.use("/", reviewRoutes);
 
 (async () => {
