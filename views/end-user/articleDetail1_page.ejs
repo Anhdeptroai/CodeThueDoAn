@@ -10,73 +10,52 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <style>
     .scroll-cell {
-      max-height: 350px;   /* Giới hạn chiều cao bảng */
+      max-height: 69vh;   /* Giới hạn chiều cao bảng */
       overflow-y: auto;    /* Thanh trượt dọc */
-      display: block;      /* Để scroll hoạt động đúng */
+      display: block;
     }
   </style>
 </head>
 <body class="bg-light">
 
   <div class="container py-3">
-    <!-- <hr class="my-4"> -->
-    <!-- Nội dung -->
     <div class="bg-white p-4 rounded shadow-sm">
+      <h4 class="mb-4 text-center text-primary">Bảng dịch vụ DTA</h4>
+      <table class="table table-bordered table-hover align-middle scroll-cell px-4">
+        <thead class="table-primary text-center">
+          <tr>
+            <th style="width: 800px" scope="col">Nội dung</th>
+            <th style="width: 200px" scope="col">Giá (VNĐ)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Giao diện -->
+          <tr><td>Thiết kế giao diện (HTML, CSS, Bootstrap/Tailwind)</td><td class="text-center">300k – 600k</td></tr>
+          
+          <!-- Chức năng cơ bản -->
+          <tr><td>Đăng nhập/Đăng ký/Đăng xuất (Auth cơ bản)</td><td class="text-center">300k – 500k</td></tr>
+          <tr><td>Quản lý người dùng (thêm/sửa/xóa, phân quyền đơn giản)</td><td class="text-center">300k – 500k</td></tr>
+          <tr><td>Quản lý dữ liệu chính (sản phẩm, khóa học, tài liệu… CRUD)</td><td class="text-center">400k – 700k</td></tr>
+          <tr><td>Tìm kiếm & lọc dữ liệu</td><td class="text-center">200k – 400k</td></tr>
+          <tr><td>Quản lý danh mục (loại sản phẩm, nhóm môn học…)</td><td class="text-center">200k – 400k</td></tr>
 
-      <div class="bg-white p-4 rounded shadow-sm">
-        <h4 class="mb-4 text-center text-primary">Bảng dịch vụ DTA</h4>
-        <table class="table table-bordered table-hover align-middle scroll-cell px-4">
-          <thead class="table-primary text-center">
-            <tr>
-              <th style="width: 800px" scope="col">Nội dung</th>
-              <th style="width: 200px" scope="col">Giá (VNĐ)</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Code thuê bài tập lớp (C/C++, Java, Python...)</td>
-              <td class="text-center">100k – 300k</td>
-            </tr>
-            <tr>
-              <td>Làm chương trình trắc nghiệm, đối vui (C/C++)</td>
-              <td class="text-center">200k – 500k</td>
-            </tr>
-            <tr>
-              <td>Quản lý sinh viên, học sinh (Winform, C#)</td>
-              <td class="text-center">500k – 1tr</td>
-            </tr>
-            <tr>
-              <td>Đồ án lớn (3 layer, Web MVC, Java Spring, DB MySQL/PostgreSQL)</td>
-              <td class="text-center">1tr – 2.5tr</td>
-            </tr>
-            <tr>
-              <td>Tích hợp thanh toán, security, dashboard</td>
-              <td class="text-center">500k – 1tr</td>
-            </tr>
-            <tr>
-              <td>Triển khai (deploy) lên domain</td>
-              <td class="text-center">300k – 500k</td>
-            </tr>
-            <tr>
-              <td>Chuyển đổi ngôn ngữ (Việt/Anh)</td>
-              <td class="text-center">200k – 400k</td>
-            </tr>
-            <tr>
-              <td>Tích hợp AI Chatbot (training tài liệu user)</td>
-              <td class="text-center">500k – 1tr</td>
-            </tr>
-            <tr>
-              <td>Thiết kế giao diện nâng cao</td>
-              <td class="text-center">500k – 1tr</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+          <!-- Tính năng mở rộng -->
+          <tr><td>Thống kê – báo cáo (xuất Excel/PDF, biểu đồ cơ bản)</td><td class="text-center">300k – 500k</td></tr>
+          <tr><td>Kết nối cơ sở dữ liệu (MySQL/PostgreSQL)</td><td class="text-center">200k – 400k</td></tr>
+          <tr><td>Triển khai demo online (Heroku/Render/Host free)</td><td class="text-center">200k – 300k</td></tr>
+          <tr><td>Báo cáo + tài liệu hướng dẫn chi tiết (Word, UML, ERD)</td><td class="text-center">300k – 600k</td></tr>
 
+          <!-- Gói combo -->
+          <tr class="table-info fw-bold text-center"><td colspan="2">📦 Gói trọn bộ tham khảo</td></tr>
+          <tr><td>Đồ án nhỏ (1 – 2 chức năng)</td><td class="text-center">800k – 1.2tr</td></tr>
+          <tr><td>Đồ án vừa (5 – 6 chức năng)</td><td class="text-center">1.5tr – 2tr</td></tr>
+          <tr><td>Đồ án lớn (Full CRUD + báo cáo + deploy)</td><td class="text-center">2.5tr – 3tr</td></tr>
+        </tbody>
+      </table>
     </div>
 
     <!-- Quay lại -->
-    <div class="mt-4 text-center">
+    <div class="mt-3 text-center">
       <a href="/trang-chu" class="btn btn-outline-primary">
         <i class="fas fa-arrow-left me-2"></i> Quay lại trang chủ
       </a>
