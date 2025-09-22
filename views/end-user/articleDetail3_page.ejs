@@ -8,14 +8,59 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Font Awesome -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <style>
+    .scroll-cell {
+      max-height: 400px;   /* Giới hạn chiều cao bảng */
+      overflow-y: auto;    /* Thanh trượt dọc */
+      display: block;
+    }
+  </style>
 </head>
 <body class="bg-light">
 
-  <div class="container py-5">
-    <hr class="my-4">
-    <!-- Nội dung -->
+  <div class="container py-3">
     <div class="bg-white p-4 rounded shadow-sm">
-      <p class="fs-6" style="line-height: 1.8;">hẹ hẹ hẹ</p>
+      <h4 class="mb-4 text-center text-primary">Bảng dịch vụ DTA</h4>
+      <table class="table table-bordered table-hover align-middle scroll-cell px-4">
+        <thead class="table-primary text-center">
+          <tr>
+            <th style="width: 800px" scope="col">Nội dung</th>
+            <th style="width: 200px" scope="col">Giá (VNĐ)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Lập trình cơ bản -->
+          <tr><td>Bài tập cơ bản: Hello World, tính toán, if/else, vòng lặp</td><td class="text-center">100k – 150k</td></tr>
+          <tr><td>Mảng & chuỗi: min/max, sắp xếp, tìm kiếm, Fibonacci</td><td class="text-center">150k – 250k</td></tr>
+          <tr><td>Đệ quy: giai thừa, số Fibonacci, tháp Hà Nội</td><td class="text-center">200k – 300k</td></tr>
+          <tr><td>Struct & con trỏ (C/C++)</td><td class="text-center">200k – 300k</td></tr>
+
+          <!-- OOP -->
+          <tr><td>Lập trình OOP: class, object, getter/setter</td><td class="text-center">250k – 400k</td></tr>
+          <tr><td>OOP nâng cao: kế thừa, đa hình, abstract class, interface</td><td class="text-center">300k – 500k</td></tr>
+          <tr><td>Quản lý danh sách đối tượng (Sinh viên, Sách, Nhân viên)</td><td class="text-center">400k – 600k</td></tr>
+
+          <!-- CSDL -->
+          <tr><td>SQL cơ bản: CREATE TABLE, INSERT, UPDATE, DELETE</td><td class="text-center">200k – 300k</td></tr>
+          <tr><td>SQL nâng cao: JOIN, GROUP BY, HAVING, Subquery</td><td class="text-center">300k – 500k</td></tr>
+          <tr><td>Bài tập quản lý dữ liệu (sinh viên, thư viện, bán hàng)</td><td class="text-center">400k – 700k</td></tr>
+
+          <!-- Web -->
+          <tr><td>HTML/CSS cơ bản: form, table, layout</td><td class="text-center">200k – 400k</td></tr>
+          <tr><td>JavaScript: validate form, máy tính mini, DOM</td><td class="text-center">300k – 500k</td></tr>
+          <tr><td>PHP/NodeJS CRUD cơ bản</td><td class="text-center">500k – 800k</td></tr>
+          <tr><td>Website mini: login/logout, session, cookie</td><td class="text-center">700k – 1tr</td></tr>
+
+          <!-- Đồ án -->
+          <tr><td>Đồ án lớn: 3-layer, MVC (Java Spring/.NET/Django)</td><td class="text-center">1tr – 2.5tr</td></tr>
+          <tr><td>Tích hợp chức năng nâng cao: bảo mật, thanh toán, API</td><td class="text-center">500k – 1tr</td></tr>
+          <tr><td>Báo cáo + tài liệu hướng dẫn chi tiết</td><td class="text-center">300k – 700k</td></tr>
+
+          <!-- Mở rộng -->
+          <tr><td>Tích hợp AI (chatbot, gợi ý, phân tích dữ liệu cơ bản)</td><td class="text-center">700k – 1.5tr</td></tr>
+          <tr><td>Triển khai sản phẩm lên server/domain</td><td class="text-center">300k – 700k</td></tr>
+        </tbody>
+      </table>
     </div>
 
     <!-- Quay lại -->
